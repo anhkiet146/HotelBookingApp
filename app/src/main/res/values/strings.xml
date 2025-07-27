@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">BookingHotel</string>
+    <string name="id1">1</string>
+    <string name="id2">2</string>
+    <string name="id3">3</string>
+    <string name="id4">4</string>
+    <string name="id5">5</string>
+
+    <string name="room1">Standard Room</string>
+    <string name="room2">Deluxe Room</string>
+    <string name="room3">Suite</string>
+    <string name="room4">Executive Room</string>
+    <string name="room5">Family Room</string>
+
+    <string name="price1">40.00</string>
+    <string name="price2">32.00</string>
+    <string name="price3">24.00</string>
+    <string name="price4">15.00</string>
+    <string name="price5">16.00</string>
+
+    <string name="amenity1">Máy mát xa</string>
+    <string name="amenity2">Điều hòa</string>
+    <string name="amenity3">View biển</string>
+    <string name="amenity4">Tivi</string>
+    <string name="amenity5">Ăn vặt</string>
+
+    <string name="availability1">5</string>
+    <string name="availability2">5</string>
+    <string name="availability3">5</string>
+    <string name="availability4">5</string>
+    <string name="availability5">5</string>
+
+</resources>
