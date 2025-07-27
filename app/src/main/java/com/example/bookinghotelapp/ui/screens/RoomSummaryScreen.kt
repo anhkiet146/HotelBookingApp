@@ -36,15 +36,9 @@ fun SummaryScreen(
         Text(text = roomType)
         Text(text = "Giá: $price USD")
         Text(text = "Tiện nghi: " + amenities.map { stringResource(it) }.joinToString(", "))
-
-        Spacer(modifier = Modifier.height(16.dp))
-
         Text(text = "Số lượng phòng: ${booking.quantity.toInt()}")
         Text(text = "Tổng giá tiền: $tongtien $")
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Text(text = "Phòng đã được đặt. Hãy thanh toán trong vòng 3h")
+        Text(text = "Phòng đã được đặt. Hãy thanh toán trong vòng 3 giờ")
 
         Spacer(modifier = Modifier.height(16.dp))
 

@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.calculateEndPadding
@@ -38,54 +39,50 @@ import com.example.bookinghotelapp.data.rooms
 import com.example.bookinghotelapp.ui.BookingViewModel
 
 
-@Composable
-fun TopAppBar(modifier: Modifier = Modifier) {
-    val layoutDirection = LocalLayoutDirection.current
-    Box(
-        contentAlignment = Alignment.Center,
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(56.dp)
-            .background(MaterialTheme.colorScheme.background)
-            .statusBarsPadding()
-            .padding(
-                start = WindowInsets.safeDrawing.asPaddingValues()
-                    .calculateStartPadding(layoutDirection),
-                end = WindowInsets.safeDrawing.asPaddingValues()
-                    .calculateEndPadding(layoutDirection),
-            ),
-    ) {
-        Text(
-            text = "Booking Hotel App",
-            fontSize = 24.sp
-        )
-    }
-}
+//@Composable
+//fun TopAppBar(modifier: Modifier = Modifier) {
+//    val layoutDirection = LocalLayoutDirection.current
+//    Box(
+//        contentAlignment = Alignment.Center,
+//        modifier = Modifier
+//            .fillMaxWidth()
+//            .height(56.dp)
+//            .background(MaterialTheme.colorScheme.background)
+//            .statusBarsPadding()
+//            .padding(
+//                start = WindowInsets.safeDrawing.asPaddingValues()
+//                    .calculateStartPadding(layoutDirection),
+//                end = WindowInsets.safeDrawing.asPaddingValues()
+//                    .calculateEndPadding(layoutDirection),
+//            ),
+//    ) {
+//        Text(
+//            text = "Booking Hotel App",
+//            fontSize = 24.sp
+//        )
+//    }
+//}
 
 @Composable
 fun RoomListScreen(
     viewModel: BookingViewModel,
     onRoomSelected: () -> Unit
 ) {
-    Scaffold(
-        topBar = { TopAppBar() }
-    ) { paddingValues ->
-        LazyColumn(
-            contentPadding = PaddingValues(
-                top = paddingValues.calculateTopPadding(),
-                bottom = 16.dp,
-                start = 16.dp,
-                end = 16.dp
-            ),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
-            items(rooms) { room ->
-                RoomItem(
-                    room = room,
-                    viewModel = viewModel,
-                    onRoomSelected = onRoomSelected
-                )
-            }
+    LazyColumn(
+        contentPadding = PaddingValues(
+            top = 50.dp,
+            bottom = 16.dp,
+            start = 16.dp,
+            end = 16.dp
+        ),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        items(rooms) { room ->
+            RoomItem(
+                room = room,
+                viewModel = viewModel,
+                onRoomSelected = onRoomSelected
+            )
         }
     }
 }
@@ -111,8 +108,6 @@ fun RoomItem(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(16.dp),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
                 text = roomType,
@@ -129,6 +124,7 @@ fun RoomItem(
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurface
             )
+            Spacer(modifier = Modifier.height(22.dp))
             Button(
                 colors = ButtonDefaults.buttonColors(
                     containerColor = MaterialTheme.colorScheme.primary
@@ -136,10 +132,9 @@ fun RoomItem(
                 onClick = {
                     onRoomSelected()
                     viewModel.updateRoom(room)
-                },
-                modifier = Modifier.padding(top = 8.dp)
+                }
             ) {
-                Text("Xem", color = MaterialTheme.colorScheme.onPrimary)
+                Text("Xem chi tiết", color = MaterialTheme.colorScheme.onPrimary)
             }
 
         }

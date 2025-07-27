@@ -84,7 +84,7 @@ fun RoomDetailScreen(
             Text("Số lượng không đủ", color = Color.Red)
         }
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(22.dp))
 
         Row(
             horizontalArrangement = Arrangement.SpaceEvenly,
